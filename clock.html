@@ -5,32 +5,155 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock Wiht Pure Vanilla JavaScript.</title>
-    <link rel="stylesheet" href="clock.css">
-    <script src="clock.js" defer></script>
+    <title>Clock With Pure Vanilla Javascript</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="clock">
-        <div class="hand hour" data-hour-hand></div>
-        <div class="hand minute" data-minute-hand></div>
-        <div class="hand second" data-second-hand></div>
-        <div class="number number1"><span class="span1">1</span></div>
-        <div class="number number2"><span class="span2">2</span></div>
-        <div class="number number3"><span class="span3">3</span></div>
-        <div class="number number4"><span class="span4">4</span></div>
-        <div class="number number5"><span class="span5">5</span></div>
-        <div class="number number6"><span class="span6">6</span></div>
-        <div class="number number7"><span class="span7">7</span></div>
-        <div class="number number8"><span class="span8">8</span></div>
-        <div class="number number9"><span class="span9">9</span></div>
-        <div class="number number10"><span class="span10">10</span></div>
-        <div class="number number11"><span class="span11">11</span></div>
-        <div class="number number12"><span class="span12">12</span></div>
+    <div class="wrapper">
+        <div class="clock">
+            <div class="inner">
+                <div class="content">
+                    <div class="hand hour" data-hour-hand></div>
+                    <div class="hand minute" data-minute-hand></div>
+                    <div class="hand second" data-second-hand></div>
+                    <div class="number number1"><span class="span1">1</span></div>
+                    <div class="number number2"><span class="span2">2</span></div>
+                    <div class="number number3"><span class="span3">3</span></div>
+                    <div class="number number4"><span class="span4">4</span></div>
+                    <div class="number number5"><span class="span5">5</span></div>
+                    <div class="number number6"><span class="span6">6</span></div>
+                    <div class="number number7"><span class="span7">7</span></div>
+                    <div class="number number8"><span class="span8">8</span></div>
+                    <div class="number number9"><span class="span9">9</span></div>
+                    <div class="number number10"><span class="span10">10</span></div>
+                    <div class="number number11"><span class="span11">11</span></div>
+                    <div class="number number12"><span class="span12">12</span></div>
+                    <div class="pointor pointor1"></div>
+                    <div class="pointor pointor2"></div>
+                    <div class="pointor pointor3"></div>
+                    <div class="pointor pointor4"></div>
+                    <div class="pointor pointor5"></div>
+                    <div class="pointor pointor6"></div>
+                    <div class="pointor pointor7"></div>
+                    <div class="pointor pointor8"></div>
+                    <div class="pointor pointor9"></div>
+                    <div class="pointor pointor10"></div>
+                    <div class="pointor pointor11"></div>
+                    <div class="pointor pointor12"></div>
+                    <div class="pointor pointor13"></div>
+                    <div class="pointor pointor14"></div>
+                    <div class="pointor pointor15"></div>
+                    <div class="pointor pointor16"></div>
+                    <div class="pointor pointor17"></div>
+                    <div class="pointor pointor18"></div>
+                    <div class="pointor pointor19"></div>
+                    <div class="pointor pointor20"></div>
+                    <div class="pointor pointor21"></div>
+                    <div class="pointor pointor22"></div>
+                    <div class="pointor pointor23"></div>
+                    <div class="pointor pointor24"></div>
+                    <div class="pointor pointor25"></div>
+                    <div class="pointor pointor26"></div>
+                    <div class="pointor pointor27"></div>
+                    <div class="pointor pointor28"></div>
+                    <div class="pointor pointor29"></div>
+                    <div class="pointor pointor30"></div>
+                    <div class="pointor pointor31"></div>
+                    <div class="pointor pointor32"></div>
+                    <div class="pointor pointor33"></div>
+                    <div class="pointor pointor34"></div>
+                    <div class="pointor pointor35"></div>
+                    <div class="pointor pointor36"></div>
+                    <div class="pointor pointor37"></div>
+                    <div class="pointor pointor38"></div>
+                    <div class="pointor pointor39"></div>
+                    <div class="pointor pointor40"></div>
+                    <div class="pointor pointor41"></div>
+                    <div class="pointor pointor42"></div>
+                    <div class="pointor pointor43"></div>
+                    <div class="pointor pointor44"></div>
+                    <div class="pointor pointor45"></div>
+                    <div class="pointor pointor46"></div>
+                    <div class="pointor pointor47"></div>
+                    <div class="pointor pointor48"></div>
+                    <div class="pointor pointor49"></div>
+                    <div class="pointor pointor50"></div>
+                    <div class="pointor pointor51"></div>
+                    <div class="pointor pointor52"></div>
+                    <div class="pointor pointor53"></div>
+                    <div class="pointor pointor54"></div>
+                    <div class="pointor pointor55"></div>
+                    <div class="pointor pointor56"></div>
+                    <div class="pointor pointor57"></div>
+                    <div class="pointor pointor58"></div>
+                    <div class="pointor pointor59"></div>
+                    <div class="pointor pointor60"></div>
+                    <div class="pointor pointor61"></div>
+                    <div class="pointor pointor62"></div>
+                    <div class="pointor pointor63"></div>
+                    <div class="pointor pointor64"></div>
+                    <div class="pointor pointor65"></div>
+                    <div class="pointor pointor66"></div>
+                    <div class="pointor pointor67"></div>
+                    <div class="pointor pointor68"></div>
+                    <div class="pointor pointor69"></div>
+                    <div class="pointor pointor70"></div>
+                    <div class="pointor pointor71"></div>
+                    <div class="pointor pointor72"></div>
+                    <div class="pointor pointor73"></div>
+                    <div class="pointor pointor74"></div>
+                    <div class="pointor pointor75"></div>
+                    <div class="pointor pointor76"></div>
+                    <div class="pointor pointor77"></div>
+                    <div class="pointor pointor78"></div>
+                    <div class="pointor pointor79"></div>
+                    <div class="pointor pointor80"></div>
+                    <div class="pointor pointor81"></div>
+                    <div class="pointor pointor82"></div>
+                    <div class="pointor pointor83"></div>
+                    <div class="pointor pointor84"></div>
+                    <div class="pointor pointor85"></div>
+                    <div class="pointor pointor86"></div>
+                    <div class="pointor pointor87"></div>
+                    <div class="pointor pointor88"></div>
+                    <div class="pointor pointor89"></div>
+                    <div class="pointor pointor90"></div>
+                    <div class="pointor pointor91"></div>
+                    <div class="pointor pointor92"></div>
+                    <div class="pointor pointor93"></div>
+                    <div class="pointor pointor94"></div>
+                    <div class="pointor pointor95"></div>
+                    <div class="pointor pointor96"></div>
+                    <div class="pointor pointor97"></div>
+                    <div class="pointor pointor98"></div>
+                    <div class="pointor pointor99"></div>
+                    <div class="pointor pointor100"></div>
+                    <div class="pointor pointor101"></div>
+                    <div class="pointor pointor102"></div>
+                    <div class="pointor pointor103"></div>
+                    <div class="pointor pointor104"></div>
+                    <div class="pointor pointor105"></div>
+                    <div class="pointor pointor106"></div>
+                    <div class="pointor pointor107"></div>
+                    <div class="pointor pointor108"></div>
+                    <div class="pointor pointor109"></div>
+                    <div class="pointor pointor110"></div>
+                    <div class="pointor pointor111"></div>
+                    <div class="pointor pointor112"></div>
+                    <div class="pointor pointor113"></div>
+                    <div class="pointor pointor114"></div>
+                    <div class="pointor pointor115"></div>
+                    <div class="pointor pointor116"></div>
+                    <div class="pointor pointor117"></div>
+                    <div class="pointor pointor118"></div>
+                    <div class="pointor pointor119"></div>
+                    <div class="pointor pointor120"></div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="clock.js"></script>
 </body>
 
 </html>
-<!--
-    div.number.number$*12>span.span${$} // emmet formula
--->
