@@ -1,114 +1,875 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-  }
 
-  body {
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=EB+Garamond:wght@400;500;600;700;800&family=Gulzar&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Audiowide', cursive;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Gulzar', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lora', serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(to right, hsl(145, 75%, 49%), hsl(175, 100%, 50%));
-  }
+}
 
-  .clock {
-      width: 350px;
-      height: 350px;
-      background-color: rgb(255, 255, 255);
-      outline: 30px solid rgba(0, 0, 0, 0.45);
-      border-radius: 50%;
-      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-      position: relative;
-  }
-  @media screen and (max-width: 500px) {
-    .clock {width: 250px;height: 250px;}
-  }
+.clock {
+    position: relative;
+    width: 50%;
+    background-color: black;
+    box-shadow: 8.0px 16.0px 16.0px rgba(0, 0, 0, 0.5);
+    border-radius: 20%;
+}
 
-  .clock .number {
-      --rotation: 0;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transform: rotate(var(--rotation));
-  }
-
-  .clock .number1 { --rotation: 30deg; }
-  .clock .number2 { --rotation: 60deg; }
-  .clock .number3 { --rotation: 90deg; }
-  .clock .number4 { --rotation: 120deg; }
-  .clock .number5 { --rotation: 150deg; }
-  .clock .number6 { --rotation: 180deg; }
-  .clock .number7 { --rotation: 210deg; }
-  .clock .number8 { --rotation: 240deg; }
-  .clock .number9 { --rotation: 270deg; }
-  .clock .number10 { --rotation: 300deg; }
-  .clock .number11 { --rotation: 330deg; }
-
-  .clock .number span { 
-      display: block; 
-      --rotation: 0; 
-      transform: rotate(var(--rotation));
-      padding: 4px;
-      font-size: 1.4rem;
-      font-weight: bold;
+@media (max-width:800px){
+    .clock {
+        width: 80%;
     }
-
-  .clock .number .span1{--rotation: -30deg;}
-  .clock .number .span2{--rotation: -60deg;}
-  .clock .number .span3{--rotation: -90deg;}
-  .clock .number .span4{--rotation: -120deg;}
-  .clock .number .span5{--rotation: -150deg;}
-  .clock .number .span6{--rotation: -180deg;}
-  .clock .number .span7{--rotation: -210deg;}
-  .clock .number .span8{--rotation: -240deg;}
-  .clock .number .span9{--rotation: -270deg;}
-  .clock .number .span10{--rotation: -300deg;}
-  .clock .number .span11{--rotation: -330deg;}
-
-.clock .hand {
-  --rotation: 0;
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  background-color: red;
-  transform-origin: bottom;
-  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
-  z-index: 10;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
+    .clock:after {
+        padding-bottom: 20%;
+    }
 }
 
-.clock::after {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background-color: black;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  top: 50%;
-  left: 50%;
-  margin: auto;
-  transform: translate(-50%,-50%);
-  border-radius: 50%;
-  z-index: 11;
+.clock:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
 
-.clock .hand.second {
-  width: 2px;
-  height: 40%;
-  background-color: red;
+.inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 100%;
 }
 
-.clock .hand.minute {
-  width: 7px;
-  height: 35%;
-  background-color: black;
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.clock .hand.hour {
-  width: 10px;
-  height: 30%;
-  background-color: black;
+.content .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
 }
+
+.content .number1 {
+    --rotation: 30deg;
+}
+
+.content .number2 {
+    --rotation: 60deg;
+}
+
+.content .number3 {
+    --rotation: 90deg;
+}
+
+.content .number4 {
+    --rotation: 120deg;
+}
+
+.content .number5 {
+    --rotation: 150deg;
+}
+
+.content .number6 {
+    --rotation: 180deg;
+}
+
+.content .number7 {
+    --rotation: 210deg;
+}
+
+.content .number8 {
+    --rotation: 240deg;
+}
+
+.content .number9 {
+    --rotation: 270deg;
+}
+
+.content .number10 {
+    --rotation: 300deg;
+}
+
+.content .number11 {
+    --rotation: 330deg;
+}
+
+.content .number span {
+    display: inline-block;
+    --rotation: 0;
+    transform: rotate(var(--rotation));
+    padding: 10px;
+    font-weight: bold;
+}
+
+.content .number .span1 {
+    --rotation: -30deg;
+}
+
+.content .number .span2 {
+    --rotation: -60deg;
+}
+
+.content .number .span3 {
+    --rotation: -90deg;
+}
+
+.content .number .span4 {
+    --rotation: -120deg;
+}
+
+.content .number .span5 {
+    --rotation: -150deg;
+}
+
+.content .number .span6 {
+    --rotation: -180deg;
+}
+
+.content .number .span7 {
+    --rotation: -210deg;
+}
+
+.content .number .span8 {
+    --rotation: -240deg;
+}
+
+.content .number .span9 {
+    --rotation: -270deg;
+}
+
+.content .number .span10 {
+    --rotation: -300deg;
+}
+
+.content .number .span11 {
+    --rotation: -330deg;
+}
+
+
+
+.content .hand {
+    --rotation: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    background-color: red;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    z-index: 10;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.content::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 11;
+}
+
+.content .hand.second {
+    width: 2px;
+    height: 40%;
+    background-color: red;
+}
+
+.content .hand.minute {
+    width: 7px;
+    height: 35%;
+    background-color: green;
+}
+
+.content .hand.hour {
+    width: 10px;
+    height: 30%;
+    background-color: blue;
+}
+
+.content .pointor {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+
+.content .pointor::after {
+    content: "";
+    width: 1px;
+    height: 6px;
+    background-color: red;
+    position: absolute;
+}
+
+.content .pointor1 {
+    --rotation: 3deg;
+}
+
+.content .pointor2 {
+    --rotation: 6deg;
+}
+
+.content .pointor3 {
+    --rotation: 9deg;
+}
+
+.content .pointor4 {
+    --rotation: 12deg;
+}
+
+.content .pointor5 {
+    --rotation: 15deg;
+}
+.content .pointor5::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+
+.content .pointor6 {
+    --rotation: 18deg;
+}
+
+.content .pointor7 {
+    --rotation: 21deg;
+}
+
+.content .pointor8 {
+    --rotation: 24deg;
+}
+
+.content .pointor9 {
+    --rotation: 27deg;
+}
+
+.content .pointor10 {
+    --rotation: 30deg;
+}
+.content .pointor10::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor11 {
+    --rotation: 33deg;
+}
+
+.content .pointor12 {
+    --rotation: 36deg;
+}
+
+.content .pointor13 {
+    --rotation: 39deg;
+}
+
+.content .pointor14 {
+    --rotation: 42deg;
+}
+
+.content .pointor15 {
+    --rotation: 45deg;
+}
+.content .pointor15::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor16 {
+    --rotation: 48deg;
+}
+
+.content .pointor17 {
+    --rotation: 51deg;
+}
+
+.content .pointor18 {
+    --rotation: 54deg;
+}
+
+.content .pointor19 {
+    --rotation: 57deg;
+}
+
+.content .pointor20 {
+    --rotation: 60deg;
+}
+.content .pointor20::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor21 {
+    --rotation: 63deg;
+}
+
+.content .pointor22 {
+    --rotation: 66deg;
+}
+
+.content .pointor23 {
+    --rotation: 69deg;
+}
+
+.content .pointor24 {
+    --rotation: 72deg;
+}
+
+.content .pointor25 {
+    --rotation: 75deg;
+}
+.content .pointor25::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+
+.content .pointor26 {
+    --rotation: 78deg;
+}
+
+.content .pointor27 {
+    --rotation: 81deg;
+}
+
+.content .pointor28 {
+    --rotation: 84deg;
+}
+
+.content .pointor29 {
+    --rotation: 87deg;
+}
+
+.content .pointor30 {
+    --rotation: 90deg;
+}
+.content .pointor30::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor31 {
+    --rotation: 93deg;
+}
+
+.content .pointor32 {
+    --rotation: 96deg;
+}
+
+.content .pointor33 {
+    --rotation: 99deg;
+}
+
+.content .pointor34 {
+    --rotation: 102deg;
+}
+
+.content .pointor35 {
+    --rotation: 105deg;
+}
+.content .pointor35::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+
+.content .pointor36 {
+    --rotation: 108deg;
+}
+
+.content .pointor37 {
+    --rotation: 111deg;
+}
+
+.content .pointor38 {
+    --rotation: 114deg;
+}
+
+.content .pointor39 {
+    --rotation: 117deg;
+}
+
+.content .pointor40 {
+    --rotation: 120deg;
+}
+.content .pointor40::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor41 {
+    --rotation: 123deg;
+}
+
+.content .pointor42 {
+    --rotation: 126deg;
+}
+
+.content .pointor43 {
+    --rotation: 129deg;
+}
+
+.content .pointor44 {
+    --rotation: 132deg;
+}
+
+.content .pointor45 {
+    --rotation: 135deg;
+}
+.content .pointor45::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor46 {
+    --rotation: 138deg;
+}
+
+.content .pointor47 {
+    --rotation: 141deg;
+}
+
+.content .pointor48 {
+    --rotation: 144deg;
+}
+
+.content .pointor49 {
+    --rotation: 147deg;
+}
+
+.content .pointor50 {
+    --rotation: 150deg;
+}
+.content .pointor50::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+.content .pointor51 {
+    --rotation: 153deg;
+}
+
+.content .pointor52 {
+    --rotation: 156deg;
+}
+
+.content .pointor53 {
+    --rotation: 159deg;
+}
+
+.content .pointor54 {
+    --rotation: 162deg;
+}
+
+.content .pointor55 {
+    --rotation: 165deg;
+}
+.content .pointor55::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+
+.content .pointor56 {
+    --rotation: 168deg;
+}
+
+.content .pointor57 {
+    --rotation: 171deg;
+}
+
+.content .pointor58 {
+    --rotation: 174deg;
+}
+
+.content .pointor59 {
+    --rotation: 177deg;
+}
+
+.content .pointor60 {
+    --rotation: 180deg;
+}
+.content .pointor60::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor61 {
+    --rotation: 183deg;
+}
+
+.content .pointor62 {
+    --rotation: 186deg;
+}
+
+.content .pointor63 {
+    --rotation: 189deg;
+}
+
+.content .pointor64 {
+    --rotation: 192deg;
+}
+
+.content .pointor65 {
+    --rotation: 195deg;
+}
+.content .pointor65::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor66 {
+    --rotation: 198deg;
+}
+
+.content .pointor67 {
+    --rotation: 201deg;
+}
+
+.content .pointor68 {
+    --rotation: 204deg;
+}
+
+.content .pointor69 {
+    --rotation: 207deg;
+}
+
+.content .pointor70 {
+    --rotation: 210deg;
+}
+.content .pointor70::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+.content .pointor71 {
+    --rotation: 213deg;
+}
+
+.content .pointor72 {
+    --rotation: 216deg;
+}
+
+.content .pointor73 {
+    --rotation: 219deg;
+}
+
+.content .pointor74 {
+    --rotation: 222deg;
+}
+
+.content .pointor75 {
+    --rotation: 225deg;
+}
+.content .pointor75::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor76 {
+    --rotation: 228deg;
+}
+
+.content .pointor77 {
+    --rotation: 231deg;
+}
+
+.content .pointor78 {
+    --rotation: 234deg;
+}
+
+.content .pointor89 {
+    --rotation: 237deg;
+}
+
+.content .pointor80 {
+    --rotation: 240deg;
+}
+.content .pointor80::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor81 {
+    --rotation: 243deg;
+}
+
+.content .pointor82 {
+    --rotation: 246deg;
+}
+
+.content .pointor83 {
+    --rotation: 249deg;
+}
+
+.content .pointor84 {
+    --rotation: 252deg;
+}
+
+.content .pointor85 {
+    --rotation: 255deg;
+}
+.content .pointor85::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor86 {
+    --rotation: 258deg;
+}
+
+.content .pointor87 {
+    --rotation: 261deg;
+}
+
+.content .pointor88 {
+    --rotation: 264deg;
+}
+
+.content .pointor89 {
+    --rotation: 267deg;
+}
+
+.content .pointor90 {
+    --rotation: 270deg;
+}
+.content .pointor90::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+.content .pointor91 {
+    --rotation: 273deg;
+}
+
+.content .pointor92 {
+    --rotation: 276deg;
+}
+
+.content .pointor93 {
+    --rotation: 279deg;
+}
+
+.content .pointor94 {
+    --rotation: 282deg;
+}
+
+.content .pointor95 {
+    --rotation: 285deg;
+}
+.content .pointor95::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor96 {
+    --rotation: 288deg;
+}
+
+.content .pointor97 {
+    --rotation: 291deg;
+}
+
+.content .pointor98 {
+    --rotation: 294deg;
+}
+
+.content .pointor99 {
+    --rotation: 297deg;
+}
+
+.content .pointor100 {
+    --rotation: 300deg;
+}
+.content .pointor100::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+.content .pointor101 {
+    --rotation: 303deg;
+}
+
+.content .pointor102 {
+    --rotation: 306deg;
+}
+
+.content .pointor103 {
+    --rotation: 309deg;
+}
+
+.content .pointor104 {
+    --rotation: 312deg;
+}
+
+.content .pointor105 {
+    --rotation: 315deg;
+}
+.content .pointor105::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor106 {
+    --rotation: 318deg;
+}
+
+.content .pointor107 {
+    --rotation: 321deg;
+}
+
+.content .pointor108 {
+    --rotation: 324deg;
+}
+
+.content .pointor109 {
+    --rotation: 327deg;
+}
+
+.content .pointor110 {
+    --rotation: 330deg;
+}
+.content .pointor110::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+.content .pointor111 {
+    --rotation: 333deg;
+}
+
+.content .pointor112 {
+    --rotation: 336deg;
+}
+
+.content .pointor113 {
+    --rotation: 339deg;
+}
+
+.content .pointor114 {
+    --rotation: 342deg;
+}
+
+.content .pointor115 {
+    --rotation: 345deg;
+}
+.content .pointor115::after {
+    content: "";
+    width: 2px;
+    height: 8px;
+    background-color: blue;
+    position: absolute;
+}
+.content .pointor116 {
+    --rotation: 348deg;
+}
+
+.content .pointor117 {
+    --rotation: 351deg;
+}
+
+.content .pointor118 {
+    --rotation: 354deg;
+}
+
+.content .pointor119 {
+    --rotation: 357deg;
+}
+.content .pointor120 {
+    --rotation: 360deg;
+}   
+.content .pointor120::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: green;
+    position: absolute;
+}
+
+/* .content .pointor120 {--rotation: 361deg;}  */
